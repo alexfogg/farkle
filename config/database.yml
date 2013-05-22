@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: farkle_development
+  pool: 5
+  host: localhost
+  username: alexfogg
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: farkle_test
+  pool: 5
+  host: localhost
+  username: alexfogg
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: farkle_production
+  pool: 5
+  host: localhost
+  username: alexfogg
+  password:

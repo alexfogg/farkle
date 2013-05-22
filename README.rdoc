@@ -1,0 +1,3 @@
+== Farkle on Rails
+
+Currently a work-in-progress. The game "Farkle" built in Ruby on Rails!
