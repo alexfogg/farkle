@@ -1,23 +1,21 @@
 # == Schema Information
 #
-# Table name: rolls
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  points     :integer
-#  dice       :integer
 #  name       :string(255)
-#  turn_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'spec_helper'
 
-describe Roll do
+describe User do
   describe '.create' do
-    it 'has an id' do
-      roll = Roll.create
-      expect(roll.id).to_not be nil
+    it 'has an id and name' do
+      user = User.create(name: 'Bob')
+      expect(user.id).to_not be nil
+      expect(user.name).to eq 'Bob'
     end
   end
 end
