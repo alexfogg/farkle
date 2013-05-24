@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  value      :integer
-#  roll_id    :integer
+#  turn_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

@@ -1,23 +1,20 @@
 # == Schema Information
 #
-# Table name: turns
+# Table name: scores
 #
 #  id          :integer          not null, primary key
-#  round_id    :integer
-#  dice        :integer
-#  turn_points :integer
-#  num_rolls   :integer
+#  final_score :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'spec_helper'
 
-describe Turn do
+describe Score do
   describe '.create' do
     it 'has an id' do
-      turn = Turn.create
-      expect(turn.id).to_not be nil
+      score = Score.create
+      expect(score.id).to_not be nil
     end
   end
 end

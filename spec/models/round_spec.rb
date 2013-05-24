@@ -2,11 +2,12 @@
 #
 # Table name: rounds
 #
-#  id         :integer          not null, primary key
-#  game_id    :integer
-#  num_turns  :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  game_id      :integer
+#  num_turns    :integer
+#  round_points :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 require 'spec_helper'

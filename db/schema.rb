@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130523185209) do
 
   create_table "dice", :force => true do |t|
     t.integer  "value"
-    t.integer  "roll_id"
+    t.integer  "turn_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -30,20 +30,12 @@ ActiveRecord::Schema.define(:version => 20130523185209) do
     t.integer "user_id"
   end
 
-  create_table "rolls", :force => true do |t|
-    t.integer  "points"
-    t.integer  "dice"
-    t.string   "name"
-    t.integer  "turn_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "rounds", :force => true do |t|
     t.integer  "game_id"
     t.integer  "num_turns"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "round_points"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "scores", :force => true do |t|
@@ -59,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130523185209) do
 
   create_table "turns", :force => true do |t|
     t.integer  "round_id"
+    t.integer  "dice"
     t.integer  "turn_points"
     t.integer  "num_rolls"
     t.datetime "created_at",  :null => false
