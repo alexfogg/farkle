@@ -27,14 +27,29 @@ class Turn < ActiveRecord::Base
   def calculate_points #score calculation function for each possible combo
     @numbers = calculate_numbers(@dice)
 
-   # straight 1-2-3-4-5-6
+    # straight 1-2-3-4-5-6
     if @numbers.sort == [1,2,3,4,5,6]
       @points = 1500
-    elsif
 
-    # single "1" die
-    elsif
-    # single "5" die
+    #six of a kind
+    elsif duplicates(@numbers).max==6 #checks to see if the max number of duplicates in the array is equal to 6
+      @points = 3000
+
+    # five of a kind
+    elsif duplicates(@numbers).max==5 #checks to see if the max number of duplicates in the array is equal to 5
+      @points = 1500
+
+    # four of a kind`
+    elsif duplicates(@numbers).max==4 && duplicates(@numbers).count(2)!=1 #checks to see if the max number of duplicates in the array is equal to 4; no pair
+      @points = 1000
+
+    elsif duplicates(@numbers).max==4 && duplicates(@numbers).count(2)==1 #checks to see if the max number of duplicates in the array is equal to 4; with pair
+      @points = 1300
+
+    elsif duplicates(@numbers).count(3)==2 #checks for two triples in the array
+      @points = 2000
+
+    elsif duplicates(@numbers).count(
 
     # three "1" dice
 
@@ -69,7 +84,7 @@ class Turn < ActiveRecord::Base
     return numbers
   end
 
-  def duplicates(dice) #check to see if there are matching dice
+  def duplicates(dice) #checks to see if there are matching dice in the array
     group = []
     for i in 1..6
       group[i-1] = dice.count(i)
